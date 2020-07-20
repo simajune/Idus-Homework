@@ -22,8 +22,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("로드 성공")
         
         self.properties()
         self.setupView()
@@ -32,13 +30,16 @@ class HomeViewController: UIViewController {
     }
     
     private func properties() {
-        self.view.backgroundColor = .gray
+        self.view.backgroundColor = .lightGray
         self.title = "핸드메이드"
     }
     
     private func getApps() {
         viewModel.getApps { (isFinished) in
             print(isFinished)
+            if isFinished {
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -48,8 +49,8 @@ class HomeViewController: UIViewController {
             $0.delegate = self
             $0.dataSource = self
             $0.separatorStyle = .none
+            $0.backgroundColor = .clear
             $0.estimatedRowHeight = 100
-            $0.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
             $0.register(AppInfoCell.self, forCellReuseIdentifier: "AppInfoCell")
             self.view.addSubview($0)
             $0.snp.makeConstraints {
@@ -72,10 +73,12 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.appModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppInfoCell") as? AppInfoCell else { return UITableViewCell()}
+        cell.drawCell(viewModel.appModels[indexPath.row])
+        return cell
     }
 }

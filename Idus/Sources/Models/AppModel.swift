@@ -9,8 +9,8 @@
 import Foundation
 
 class ItunesResultModel: Codable {
-    var resultCount: Int?
-    var results: [AppModel]?
+    var resultCount: Int
+    var results: [AppModel]
 }
 
 class AppModel: Codable {
@@ -31,6 +31,7 @@ class AppModel: Codable {
     var userRatingCountForCurrentVersion: Int
     var trackId: Int
     var trackName: String
+    var sellerName: String
     var releaseDate: String
     var currentVersionReleaseDate: String
     var genreIds: [String]
