@@ -14,7 +14,7 @@ enum IdusService {
 
 extension IdusService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://itunes.apple.com/term=핸드메이드&country=kr&media=software")!
+        return URL(string: "https://itunes.apple.com")!
     }
     
     var path: String {

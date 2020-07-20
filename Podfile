@@ -9,5 +9,7 @@ target 'Idus' do
   pod 'Then'
   pod 'Moya'
   pod 'Kingfisher'
-
+  pod 'SwiftyJSON'
+  pod 'Cosmos', '~> 22.1'
+  
 end
