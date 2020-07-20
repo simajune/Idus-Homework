@@ -46,7 +46,6 @@ class AppInfoCell: UITableViewCell {
             }
         }
         self.appMainImageView = UIImageView().then {
-            $0.backgroundColor = .red
             contentsView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.leading.trailing.equalToSuperview()

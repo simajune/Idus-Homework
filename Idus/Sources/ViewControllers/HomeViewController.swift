@@ -26,8 +26,23 @@ class HomeViewController: UIViewController {
         self.properties()
         self.setupView()
         self.getApps()
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 11.0, *) {
+            GlobalDefine.shared.curNav?.navigationBar.prefersLargeTitles = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if #available(iOS 11.0, *) {
+            GlobalDefine.shared.curNav?.navigationBar.prefersLargeTitles = false
+        }
+    }
+    
+    // MARK: - Private Methods
     
     private func properties() {
         self.view.backgroundColor = .lightGray
@@ -43,7 +58,6 @@ class HomeViewController: UIViewController {
         }
     }
 
-    
     private func setupView() {
         self.tableView = UITableView().then {
             $0.delegate = self
@@ -61,9 +75,16 @@ class HomeViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailViewController(viewModel: DetailViewModel(model: viewModel.appModels[indexPath.row]))
+        GlobalFunction.pushVC(detailVC)
     }
 }
 

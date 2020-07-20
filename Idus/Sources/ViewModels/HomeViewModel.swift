@@ -12,12 +12,18 @@ import SwiftyJSON
 
 class HomeViewModel {
     
+    // MARK: - Properties
+    
     let provider = MoyaProvider<IdusService>()
     var appModels = [AppModel]()
+    
+    // MARK: - Initailize
     
     init() {
         
     }
+    
+    // MARK: - Public Methods
     
     public func getApps(completion: @escaping (Bool) -> Void) {
         provider.request(.getAppList) { (result) in
@@ -26,10 +32,6 @@ class HomeViewModel {
                 let decoder = JSONDecoder()
                 do {
                     let models = try decoder.decode(ItunesResultModel.self, from: moyaResponse.data)
-                    
-                    let responseJSON = JSON(moyaResponse.data)
-                    Log.i(responseJSON)
-                    Log.i(models.results)
                     self.appModels = models.results
                     completion(true)
                 } catch {

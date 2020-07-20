@@ -14,6 +14,7 @@
 		23913DF524C29D5500F89E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23913DF324C29D5500F89E9B /* LaunchScreen.storyboard */; };
 		23913E0324C2DDD900F89E9B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23913E0224C2DDD900F89E9B /* HomeViewModel.swift */; };
 		23913E0624C2DED300F89E9B /* IdusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23913E0524C2DED300F89E9B /* IdusService.swift */; };
+		23913E0824C5EF7000F89E9B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23913E0724C5EF7000F89E9B /* DetailViewModel.swift */; };
 		3814A53724C52025008269CB /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53624C52025008269CB /* AppModel.swift */; };
 		3814A53A24C524B9008269CB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53924C524B9008269CB /* Log.swift */; };
 		3814A53D24C54215008269CB /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53C24C54215008269CB /* AppInfoCell.swift */; };
@@ -34,6 +35,7 @@
 		23913DF624C29D5500F89E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23913E0224C2DDD900F89E9B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		23913E0524C2DED300F89E9B /* IdusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdusService.swift; sourceTree = "<group>"; };
+		23913E0724C5EF7000F89E9B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		3814A53624C52025008269CB /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		3814A53924C524B9008269CB /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3814A53C24C54215008269CB /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				23913E0224C2DDD900F89E9B /* HomeViewModel.swift */,
+				23913E0724C5EF7000F89E9B /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				3814A53A24C524B9008269CB /* Log.swift in Sources */,
 				3814A53D24C54215008269CB /* AppInfoCell.swift in Sources */,
 				23913E0624C2DED300F89E9B /* IdusService.swift in Sources */,
+				23913E0824C5EF7000F89E9B /* DetailViewModel.swift in Sources */,
 				3814A54224C561F7008269CB /* GlobalDefine.swift in Sources */,
 				3814A53724C52025008269CB /* AppModel.swift in Sources */,
 				3814A54424C5622C008269CB /* GlobalFunction.swift in Sources */,
@@ -484,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TJ.Idus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -504,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TJ.Idus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
