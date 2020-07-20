@@ -20,6 +20,7 @@
 		3814A53F24C561AF008269CB /* IdusNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53E24C561AF008269CB /* IdusNavigationController.swift */; };
 		3814A54224C561F7008269CB /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54124C561F7008269CB /* GlobalDefine.swift */; };
 		3814A54424C5622C008269CB /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54324C5622C008269CB /* GlobalFunction.swift */; };
+		3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54524C58C9D008269CB /* DetailViewController.swift */; };
 		7D4A7A0B7AF3C552586781D2 /* Pods_Idus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		3814A53E24C561AF008269CB /* IdusNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdusNavigationController.swift; sourceTree = "<group>"; };
 		3814A54124C561F7008269CB /* GlobalDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDefine.swift; sourceTree = "<group>"; };
 		3814A54324C5622C008269CB /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
+		3814A54524C58C9D008269CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F2DD255A3D6854F47989A29 /* Pods-Idus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.debug.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.debug.xcconfig"; sourceTree = "<group>"; };
 		43F3CAE0FF6AC6FE0ED40CC7 /* Pods-Idus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.release.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.release.xcconfig"; sourceTree = "<group>"; };
 		50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Idus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				23913DEC24C29D4F00F89E9B /* HomeViewController.swift */,
+				3814A54524C58C9D008269CB /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */,
 				23913DED24C29D4F00F89E9B /* HomeViewController.swift in Sources */,
 				23913E0324C2DDD900F89E9B /* HomeViewModel.swift in Sources */,
 				3814A53F24C561AF008269CB /* IdusNavigationController.swift in Sources */,
