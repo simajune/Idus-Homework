@@ -17,11 +17,14 @@
 		23913E0824C5EF7000F89E9B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23913E0724C5EF7000F89E9B /* DetailViewModel.swift */; };
 		3814A53724C52025008269CB /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53624C52025008269CB /* AppModel.swift */; };
 		3814A53A24C524B9008269CB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53924C524B9008269CB /* Log.swift */; };
-		3814A53D24C54215008269CB /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53C24C54215008269CB /* AppInfoCell.swift */; };
+		3814A53D24C54215008269CB /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53C24C54215008269CB /* AppCell.swift */; };
 		3814A53F24C561AF008269CB /* IdusNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A53E24C561AF008269CB /* IdusNavigationController.swift */; };
 		3814A54224C561F7008269CB /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54124C561F7008269CB /* GlobalDefine.swift */; };
 		3814A54424C5622C008269CB /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54324C5622C008269CB /* GlobalFunction.swift */; };
 		3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54524C58C9D008269CB /* DetailViewController.swift */; };
+		38A87F7924C6B8770049D4B7 /* TrackWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7824C6B8770049D4B7 /* TrackWebViewController.swift */; };
+		38A87F7D24C6CBF60049D4B7 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */; };
+		38A87F7F24C6CC040049D4B7 /* AppCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */; };
 		7D4A7A0B7AF3C552586781D2 /* Pods_Idus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,11 +41,14 @@
 		23913E0724C5EF7000F89E9B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		3814A53624C52025008269CB /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		3814A53924C524B9008269CB /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		3814A53C24C54215008269CB /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
+		3814A53C24C54215008269CB /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		3814A53E24C561AF008269CB /* IdusNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdusNavigationController.swift; sourceTree = "<group>"; };
 		3814A54124C561F7008269CB /* GlobalDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDefine.swift; sourceTree = "<group>"; };
 		3814A54324C5622C008269CB /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
 		3814A54524C58C9D008269CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		38A87F7824C6B8770049D4B7 /* TrackWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWebViewController.swift; sourceTree = "<group>"; };
+		38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
+		38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryCell.swift; sourceTree = "<group>"; };
 		3F2DD255A3D6854F47989A29 /* Pods-Idus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.debug.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.debug.xcconfig"; sourceTree = "<group>"; };
 		43F3CAE0FF6AC6FE0ED40CC7 /* Pods-Idus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.release.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.release.xcconfig"; sourceTree = "<group>"; };
 		50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Idus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +149,7 @@
 			children = (
 				23913DEC24C29D4F00F89E9B /* HomeViewController.swift */,
 				3814A54524C58C9D008269CB /* DetailViewController.swift */,
+				38A87F7824C6B8770049D4B7 /* TrackWebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,7 +190,8 @@
 		3814A53B24C54204008269CB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3814A53C24C54215008269CB /* AppInfoCell.swift */,
+				38A87F7A24C6C9E40049D4B7 /* Home */,
+				38A87F7B24C6C9F30049D4B7 /* Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +204,23 @@
 				3814A54324C5622C008269CB /* GlobalFunction.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		38A87F7A24C6C9E40049D4B7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3814A53C24C54215008269CB /* AppCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		38A87F7B24C6C9F30049D4B7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */,
+				38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		5F9CEFB62F12713ED5A5D535 /* Frameworks */ = {
@@ -324,9 +349,12 @@
 				3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */,
 				23913DED24C29D4F00F89E9B /* HomeViewController.swift in Sources */,
 				23913E0324C2DDD900F89E9B /* HomeViewModel.swift in Sources */,
+				38A87F7D24C6CBF60049D4B7 /* AppInfoCell.swift in Sources */,
 				3814A53F24C561AF008269CB /* IdusNavigationController.swift in Sources */,
+				38A87F7924C6B8770049D4B7 /* TrackWebViewController.swift in Sources */,
 				3814A53A24C524B9008269CB /* Log.swift in Sources */,
-				3814A53D24C54215008269CB /* AppInfoCell.swift in Sources */,
+				38A87F7F24C6CC040049D4B7 /* AppCategoryCell.swift in Sources */,
+				3814A53D24C54215008269CB /* AppCell.swift in Sources */,
 				23913E0624C2DED300F89E9B /* IdusService.swift in Sources */,
 				23913E0824C5EF7000F89E9B /* DetailViewModel.swift in Sources */,
 				3814A54224C561F7008269CB /* GlobalDefine.swift in Sources */,
@@ -478,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3UGB7ZX43H;
+				DEVELOPMENT_TEAM = NDAHSTNV4Q;
 				INFOPLIST_FILE = Idus/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -498,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3UGB7ZX43H;
+				DEVELOPMENT_TEAM = NDAHSTNV4Q;
 				INFOPLIST_FILE = Idus/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
