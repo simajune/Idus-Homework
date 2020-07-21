@@ -57,7 +57,7 @@ class AppCategoryCell: UITableViewCell {
     }
     
     private func setProperties() {
-        self.backgroundColor = .clear
+        self.backgroundColor = .white
         self.selectionStyle = .none
     }
     

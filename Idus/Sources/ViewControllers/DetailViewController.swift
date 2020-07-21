@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setProperties() {
-//        self.view.backgroundColor = .yellow
+        self.view.backgroundColor = .lightGray
     }
 }
 
@@ -68,11 +68,17 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+        footerView.backgroundColor = .clear
+        return footerView
+    }
 }
 
 extension DetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -31,6 +31,8 @@ class AppModel: Codable {
     var userRatingCountForCurrentVersion: Int
     var trackId: Int
     var trackName: String
+    var fileSizeBytes: String
+    var contentAdvisoryRating: String
     var sellerName: String
     var releaseDate: String
     var currentVersionReleaseDate: String
