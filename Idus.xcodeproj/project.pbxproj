@@ -25,6 +25,7 @@
 		38A87F7924C6B8770049D4B7 /* TrackWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7824C6B8770049D4B7 /* TrackWebViewController.swift */; };
 		38A87F7D24C6CBF60049D4B7 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */; };
 		38A87F7F24C6CC040049D4B7 /* AppCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */; };
+		38A87F8124C6E0400049D4B7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F8024C6E0400049D4B7 /* InfoView.swift */; };
 		7D4A7A0B7AF3C552586781D2 /* Pods_Idus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		38A87F7824C6B8770049D4B7 /* TrackWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWebViewController.swift; sourceTree = "<group>"; };
 		38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
 		38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryCell.swift; sourceTree = "<group>"; };
+		38A87F8024C6E0400049D4B7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		3F2DD255A3D6854F47989A29 /* Pods-Idus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.debug.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.debug.xcconfig"; sourceTree = "<group>"; };
 		43F3CAE0FF6AC6FE0ED40CC7 /* Pods-Idus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.release.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.release.xcconfig"; sourceTree = "<group>"; };
 		50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Idus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +221,7 @@
 			children = (
 				38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */,
 				38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */,
+				38A87F8024C6E0400049D4B7 /* InfoView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A87F8124C6E0400049D4B7 /* InfoView.swift in Sources */,
 				3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */,
 				23913DED24C29D4F00F89E9B /* HomeViewController.swift in Sources */,
 				23913E0324C2DDD900F89E9B /* HomeViewModel.swift in Sources */,
