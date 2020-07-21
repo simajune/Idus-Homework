@@ -1,5 +1,5 @@
 //
-//  AppInfoCell.swift
+//  AppCell.swift
 //  Idus
 //
 //  Created by Taejune Jung on 2020/07/20.
@@ -10,9 +10,10 @@ import UIKit
 import Kingfisher
 import Cosmos
 
-class AppInfoCell: UITableViewCell {
+class AppCell: UITableViewCell {
     
     // MARK: - UIComponents
+    
     var contentsView: UIView!
     var appMainImageView: UIImageView!
     var titleView: UIView!
@@ -27,7 +28,7 @@ class AppInfoCell: UITableViewCell {
     // MARK: - Overriden Methods
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: "AppInfoCell")
+        super.init(style: .default, reuseIdentifier: "AppCell")
         self.properties()
         self.setupView()
     

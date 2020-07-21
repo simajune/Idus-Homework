@@ -8,20 +8,22 @@
 
 import UIKit
 
-class IdusNavigationController: UINavigationController, UINavigationControllerDelegate {
+class IdusNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.tintColor = .black
         navigationBar.isTranslucent = false
-    
+        navigationBar.topItem?.title = "핸드메이드"
+        
         if #available(iOS 11.0, *) {
-            self.navigationBar.prefersLargeTitles = true
-        } else {
-            
+            navigationBar.prefersLargeTitles = true
+            navigationItem.largeTitleDisplayMode = .automatic
+            if #available(iOS 13.0, *) {
+                navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
+            }
         }
-        self.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {

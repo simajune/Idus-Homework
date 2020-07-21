@@ -13,10 +13,14 @@ import SnapKit
 
 class HomeViewController: UIViewController {
 
+    // MARK: - UI Components
+    
+    private var tableView: UITableView!
+    
     // MARK: - Properties
     
-    let viewModel = HomeViewModel()
-    var tableView: UITableView!
+    private let viewModel = HomeViewModel()
+    
     
     // MARK: - Overriden Methods
     
@@ -65,7 +69,7 @@ class HomeViewController: UIViewController {
             $0.separatorStyle = .none
             $0.backgroundColor = .clear
             $0.estimatedRowHeight = 100
-            $0.register(AppInfoCell.self, forCellReuseIdentifier: "AppInfoCell")
+            $0.register(AppCell.self, forCellReuseIdentifier: "AppCell")
             self.view.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.bottom.leading.trailing.equalToSuperview()
@@ -98,7 +102,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppInfoCell") as? AppInfoCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppCell") as? AppCell else { return UITableViewCell()}
         cell.drawCell(viewModel.appModels[indexPath.row])
         return cell
     }
