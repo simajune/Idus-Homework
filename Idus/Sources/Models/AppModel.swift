@@ -32,7 +32,7 @@ class AppModel: Codable {
     var trackId: Int
     var trackName: String
     var fileSizeBytes: String
-    var contentAdvisoryRating: String
+    var trackContentRating: String
     var sellerName: String
     var releaseDate: String
     var currentVersionReleaseDate: String

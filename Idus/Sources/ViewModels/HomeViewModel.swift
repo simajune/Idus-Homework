@@ -33,6 +33,7 @@ class HomeViewModel {
                 do {
                     let models = try decoder.decode(ItunesResultModel.self, from: moyaResponse.data)
                     self.appModels = models.results
+                    Log.i(JSON(moyaResponse.data))
                     completion(true)
                 } catch {
                 }

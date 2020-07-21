@@ -49,6 +49,7 @@ class DetailViewController: UIViewController {
             $0.separatorStyle = .none
             $0.backgroundColor = .clear
             $0.estimatedRowHeight = 100
+            $0.register(AppInfoCell.self, forCellReuseIdentifier: "AppInfoCell")
             $0.register(AppCategoryCell.self, forCellReuseIdentifier: "AppCategoryCell")
             self.view.addSubview($0)
             $0.snp.makeConstraints {
@@ -82,12 +83,19 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.appModel.genres.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppCategoryCell") as? AppCategoryCell else { return UITableViewCell()}
-        cell.drawCell(model: viewModel.appModel)
-        return cell
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppInfoCell") as? AppInfoCell else { return UITableViewCell() }
+            cell.drawCell(viewModel.appModel)
+            return cell
+            
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppCategoryCell") as? AppCategoryCell else { return UITableViewCell() }
+            cell.drawCell(viewModel.appModel)
+            return cell
+        }
     }
 }

@@ -63,7 +63,7 @@ class AppCategoryCell: UITableViewCell {
     
     // MARK: - Public Methods
     
-    public func drawCell(model: AppModel) {
+    public func drawCell(_ model: AppModel) {
         model.genres.forEach {
             let label = UILabel()
             label.text = " #\($0) "
