@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setProperties() {
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .white
     }
 }
 
@@ -68,12 +68,6 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
-        footerView.backgroundColor = .clear
-        return footerView
     }
 }
 
@@ -89,13 +83,19 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppInfoCell") as? AppInfoCell else { return UITableViewCell() }
+            cell.delegate = self
             cell.drawCell(viewModel.appModel)
             return cell
-            
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppCategoryCell") as? AppCategoryCell else { return UITableViewCell() }
             cell.drawCell(viewModel.appModel)
             return cell
         }
+    }
+}
+
+extension DetailViewController: AppInfoCellDelegate {
+    func featureBtnClicked() {
+        self.tableView.reloadSections(IndexSet.init(integer: 0), with: .none)
     }
 }

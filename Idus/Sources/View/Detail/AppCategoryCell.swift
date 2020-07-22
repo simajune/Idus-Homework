@@ -29,6 +29,10 @@ class AppCategoryCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.categoriesStackView.subviews.forEach { $0.removeFromSuperview() }
+    }
     // MARK: - Private Methods
     
     private func setupView() {
@@ -64,6 +68,7 @@ class AppCategoryCell: UITableViewCell {
     // MARK: - Public Methods
     
     public func drawCell(_ model: AppModel) {
+        self.categoriesStackView.subviews.forEach { $0.removeFromSuperview() }
         model.genres.forEach {
             let label = UILabel()
             label.text = " #\($0) "
