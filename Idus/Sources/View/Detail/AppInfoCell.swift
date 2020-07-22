@@ -322,9 +322,10 @@ final class AppInfoCell: UITableViewCell {
         }
         self.releaseNotesLabel = UILabel().then {
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.textColor = .gray
+            $0.clipsToBounds = true
+            $0.textColor = .black
             $0.numberOfLines = 0
-            $0.backgroundColor = .lightGray
+            $0.backgroundColor = .white
             featureView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(48)
@@ -445,7 +446,7 @@ final class AppInfoCell: UITableViewCell {
         contentRatingContentLabel.text = model.trackContentRating
         featureContentLabel.text = model.version
         releaseNotesLabel.text = model.releaseNotes
-        
+        releaseNotesLabel.sizeToFit()
         descriptionLabel.text = model.description
         
         self.trackViewUrlStr = model.trackViewUrl
