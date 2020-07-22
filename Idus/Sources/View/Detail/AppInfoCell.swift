@@ -11,6 +11,7 @@ import UIKit
 protocol AppInfoCellDelegate {
     func webBtnClicked(url: String?)
     func shareBtnClicked(url: String?)
+    func expandBtnClicked()
 }
 
 final class AppInfoCell: UITableViewCell {
@@ -55,6 +56,7 @@ final class AppInfoCell: UITableViewCell {
     private var featureView: UIView!
     private var featureTitleLabel: UILabel!
     private var featureContentLabel: UILabel!
+    private var releaseNotesStackView: UIStackView!
     private var releaseNotesLabel: UILabel!
     private var arrowImageView: UIImageView!
     private var featureSeparateView: UIView!
@@ -320,24 +322,29 @@ final class AppInfoCell: UITableViewCell {
                 $0.height.equalTo(48)
             }
         }
-        self.releaseNotesLabel = UILabel().then {
-            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.clipsToBounds = true
-            $0.textColor = .black
-            $0.numberOfLines = 0
-            $0.backgroundColor = .white
+        self.releaseNotesStackView = UIStackView().then {
+            $0.axis = .vertical
             featureView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(48)
                 $0.leading.trailing.equalToSuperview()
-                $0.height.equalTo(0)
+                $0.height.greaterThanOrEqualTo(0)
             }
+        }
+        self.releaseNotesLabel = UILabel().then {
+            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+            $0.isHidden = true
+            $0.clipsToBounds = true
+            $0.textColor = .black
+            $0.numberOfLines = 0
+            $0.backgroundColor = .white
+            releaseNotesStackView.addArrangedSubview($0)
         }
         self.featureSeparateView = UIView().then {
             $0.backgroundColor = .lightGray
             featureView.addSubview($0)
             $0.snp.makeConstraints {
-                $0.top.equalTo(releaseNotesLabel.snp.bottom)
+                $0.top.equalTo(releaseNotesStackView.snp.bottom)
                 $0.bottom.equalToSuperview()
                 $0.leading.equalToSuperview()
                 $0.trailing.equalToSuperview()
@@ -388,16 +395,13 @@ final class AppInfoCell: UITableViewCell {
         if self.expandedReleaseNotesButton.isSelected {
             self.arrowImageView.image = UIImage(named: "icArrowDownBlack")
             self.expandedReleaseNotesButton.isSelected = false
-            self.releaseNotesLabel.snp.updateConstraints {
-                $0.height.equalTo(0)
-            }
+            self.releaseNotesLabel.isHidden = true
         } else {
             self.arrowImageView.image = UIImage(named: "icArrowUpBlack")
             self.expandedReleaseNotesButton.isSelected = true
-            self.releaseNotesLabel.snp.updateConstraints {
-                $0.height.equalTo(100)
-            }
+            self.releaseNotesLabel.isHidden = false
         }
+        delegate?.expandBtnClicked()
     }
     
     @objc func webBtnAction() {

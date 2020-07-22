@@ -108,4 +108,9 @@ extension DetailViewController: AppInfoCellDelegate {
         let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(activityVC, animated: true)
     }
+    
+    func expandBtnClicked() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.tableView.reloadRows(at: [indexPath], with: .none)
+    }
 }
