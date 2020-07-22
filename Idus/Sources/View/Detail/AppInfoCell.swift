@@ -364,7 +364,6 @@ class AppInfoCell: UITableViewCell {
         
         // 설명
         self.descriptionLabel = UILabel().then {
-            $0.backgroundColor = .red
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             $0.textColor = .black
             $0.textAlignment = .center
@@ -373,7 +372,6 @@ class AppInfoCell: UITableViewCell {
                 $0.top.equalTo(featureView.snp.bottom).offset(10)
                 $0.leading.equalToSuperview().offset(20)
                 $0.trailing.equalToSuperview().offset(-20)
-                $0.height.equalTo(100)
                 $0.bottom.equalToSuperview().offset(-20)
             }
         }
@@ -400,6 +398,12 @@ class AppInfoCell: UITableViewCell {
             }
         }
         
+    }
+    
+    private func convertToBtyesToMegaBytes(byte: String) -> String {
+        guard let intBytes = Int(byte) else { return "0" }
+        let intMegaBytes = intBytes / 1048576
+        return "\(intMegaBytes)MB"
     }
     // MARK: - Public Methods
     
@@ -430,9 +434,10 @@ class AppInfoCell: UITableViewCell {
         appSubtitleLabel.text = model.sellerName
         priceLabel.text = model.formattedPrice
         
-        fileSizeContentLabel.text = model.fileSizeBytes
+        fileSizeContentLabel.text = convertToBtyesToMegaBytes(byte: model.fileSizeBytes)
         contentRatingContentLabel.text = model.trackContentRating
         featureContentLabel.text = model.version
+        releaseNotesLabel.text = model.releaseNotes
         
         descriptionLabel.text = model.description
     }
