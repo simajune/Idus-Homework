@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailViewController: UIViewController {
     
@@ -95,7 +96,16 @@ extension DetailViewController: UITableViewDataSource {
 }
 
 extension DetailViewController: AppInfoCellDelegate {
-    func featureBtnClicked() {
-        self.tableView.reloadSections(IndexSet.init(integer: 0), with: .none)
+    func webBtnClicked(url: String?) {
+        guard let urlStr = url, let url = URL(string: urlStr) else { return }
+        let controller = SFSafariViewController(url: url)
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func shareBtnClicked(url: String?) {
+        guard let url = url else { return }
+        let items = [URL(string: url)!]
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(activityVC, animated: true)
     }
 }

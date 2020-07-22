@@ -41,13 +41,16 @@ class TrackWebViewController: UIViewController {
     
     private func setupView() {
         self.webView = WKWebView().then {
+            $0.navigationDelegate = self
+            $0.uiDelegate = self
             self.view.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.bottom.leading.trailing.equalToSuperview()
             }
             self.disableBounces($0)
         }
-        self.loadWebView(with: self.trackWebUrl)
+        Log.i(self.trackWebUrl)
+        self.loadWebView(with: "https://apps.apple.com/kr/app/%ED%95%B8%EB%94%94%EC%98%A8/id1289146919?uo=4")
     }
     
     private func disableBounces(_ getWebview: WKWebView) {
@@ -74,3 +77,11 @@ class TrackWebViewController: UIViewController {
     // MARK: - Public Methods
 }
 
+extension TrackWebViewController: WKUIDelegate, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
+}

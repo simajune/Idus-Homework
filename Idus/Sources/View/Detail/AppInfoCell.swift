@@ -9,10 +9,11 @@
 import UIKit
 
 protocol AppInfoCellDelegate {
-    func featureBtnClicked()
+    func webBtnClicked(url: String?)
+    func shareBtnClicked(url: String?)
 }
 
-class AppInfoCell: UITableViewCell {
+final class AppInfoCell: UITableViewCell {
     
     // MARK: - UI Components
     
@@ -55,7 +56,6 @@ class AppInfoCell: UITableViewCell {
     private var featureTitleLabel: UILabel!
     private var featureContentLabel: UILabel!
     private var releaseNotesLabel: UILabel!
-    private var releaseNotesLabelHeight: NSLayoutConstraint!
     private var arrowImageView: UIImageView!
     private var featureSeparateView: UIView!
     private var expandedReleaseNotesButton: UIButton!
@@ -64,9 +64,11 @@ class AppInfoCell: UITableViewCell {
     private var descriptionLabel: UILabel!
     
     // MARK: - Properties
+    
     let SCROLLVIEW_INSET: CGFloat = 20.0
     let SCROLLVIEW_SPACE: CGFloat = 8.0
     var delegate: AppInfoCellDelegate?
+    var trackViewUrlStr: String?
     
     // MARK: - Initialize
     
@@ -170,6 +172,7 @@ class AppInfoCell: UITableViewCell {
             $0.setTitleColor(.black, for: .normal)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             $0.backgroundColor = .white
+            $0.addTarget(self, action: #selector(webBtnAction), for: .touchUpInside)
             buttonsView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.leading.bottom.equalToSuperview()
@@ -180,6 +183,7 @@ class AppInfoCell: UITableViewCell {
             $0.setTitleColor(.black, for: .normal)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             $0.backgroundColor = .white
+            $0.addTarget(self, action: #selector(shareBtnAction), for: .touchUpInside)
             buttonsView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.trailing.bottom.equalToSuperview()
@@ -318,11 +322,9 @@ class AppInfoCell: UITableViewCell {
         }
         self.releaseNotesLabel = UILabel().then {
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.textColor = .black
+            $0.textColor = .gray
             $0.numberOfLines = 0
-            $0.backgroundColor = .green
-//            releaseNotesLabelHeight = $0.heightAnchor.constraint(equalToConstant: 0)
-//            releaseNotesLabelHeight.isActive = true
+            $0.backgroundColor = .lightGray
             featureView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(48)
@@ -350,9 +352,7 @@ class AppInfoCell: UITableViewCell {
             }
         }
         self.expandedReleaseNotesButton = UIButton().then {
-//            $0.setTitle(nil, for: .normal)
-            $0.setTitle("선택", for: .selected)
-            $0.setTitle("비선택", for: .normal)
+            $0.setTitle(nil, for: .normal)
             $0.setTitleColor(.black, for: .normal)
             $0.setTitleColor(.black, for: .selected)
             $0.addTarget(self, action: #selector(featureViewClicked), for: .touchUpInside)
@@ -366,6 +366,7 @@ class AppInfoCell: UITableViewCell {
         self.descriptionLabel = UILabel().then {
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             $0.textColor = .black
+            $0.numberOfLines = 0
             $0.textAlignment = .center
             infoView.addSubview($0)
             $0.snp.makeConstraints {
@@ -383,21 +384,27 @@ class AppInfoCell: UITableViewCell {
     }
     
     @objc func featureViewClicked() {
-        self.delegate?.featureBtnClicked()
         if self.expandedReleaseNotesButton.isSelected {
-            self.expandedReleaseNotesButton.isSelected = false
             self.arrowImageView.image = UIImage(named: "icArrowDownBlack")
+            self.expandedReleaseNotesButton.isSelected = false
             self.releaseNotesLabel.snp.updateConstraints {
                 $0.height.equalTo(0)
             }
         } else {
-            self.expandedReleaseNotesButton.isSelected = true
             self.arrowImageView.image = UIImage(named: "icArrowUpBlack")
+            self.expandedReleaseNotesButton.isSelected = true
             self.releaseNotesLabel.snp.updateConstraints {
                 $0.height.equalTo(100)
             }
         }
-        
+    }
+    
+    @objc func webBtnAction() {
+        delegate?.webBtnClicked(url: self.trackViewUrlStr)
+    }
+    
+    @objc func shareBtnAction() {
+        delegate?.shareBtnClicked(url: self.trackViewUrlStr)
     }
     
     private func convertToBtyesToMegaBytes(byte: String) -> String {
@@ -405,10 +412,10 @@ class AppInfoCell: UITableViewCell {
         let intMegaBytes = intBytes / 1048576
         return "\(intMegaBytes)MB"
     }
+    
     // MARK: - Public Methods
     
     public func drawCell(_ model: AppModel) {
-        Log.i(expandedReleaseNotesButton.isSelected)
         model.screenshotUrls.forEach { url in
             screenShopImageView = UIImageView().then {
                 $0.layer.cornerRadius = 20
@@ -440,6 +447,8 @@ class AppInfoCell: UITableViewCell {
         releaseNotesLabel.text = model.releaseNotes
         
         descriptionLabel.text = model.description
+        
+        self.trackViewUrlStr = model.trackViewUrl
     }
 }
 
