@@ -18,7 +18,8 @@ class DetailViewController: UIViewController {
     // MARK: - Properties
     
     private let viewModel: DetailViewModel
-    
+    private let cellTypes: [[CellType]] = [[.appScreenshot, .appTitle, .appWebShare, .appSize, .appContentRating, .appFeature, .appDescription],
+                                           [.appCategory]]
     // MARK: - Overriden Methods
     
     override func viewDidLoad() {
@@ -84,22 +85,36 @@ extension DetailViewController: UITableViewDelegate {
 
 extension DetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return cellTypes.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return cellTypes[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppScreenShotsCell") as? AppScreenShotsCell else { return UITableViewCell() }
-            cell.drawCell(viewModel.appModel)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellTypes[indexPath.section][indexPath.row].identifier, for: indexPath)
+        guard let detailAppCell = cell as? DetailAppCellProtocol else { return UITableViewCell() }
+        detailAppCell.drawCell(viewModel.appModel)
+        if let cell = cell as? AppWebShareCell {
+            cell.delegate = self
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppCategoryCell") as? AppCategoryCell else { return UITableViewCell() }
-            cell.drawCell(viewModel.appModel)
             return cell
         }
+    }
+}
+
+extension DetailViewController: AppWebShareCellDelegate {
+    func webBtnClicked(url: String?) {
+        guard let url = URL(string: viewModel.appModel.trackViewUrl) else { return }
+        let controller = SFSafariViewController(url: url)
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func shareBtnClicked(url: String?) {
+        let items = [URL(string: viewModel.appModel.trackViewUrl)!]
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(activityVC, animated: true)
     }
 }

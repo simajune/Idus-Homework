@@ -8,7 +8,11 @@
 
 import UIKit
 
-class AppScreenShotsCell: UITableViewCell {
+protocol DetailAppCellProtocol {
+    func drawCell(_ model: AppModel)
+}
+
+class AppScreenShotsCell: UITableViewCell, DetailAppCellProtocol {
     
     // MARK: - UI Components
     
@@ -16,7 +20,6 @@ class AppScreenShotsCell: UITableViewCell {
     private var screenshotScrollView: UIScrollView!
     private var screenshotsStackView: UIStackView!
     private var screenShopImageView: UIImageView!
-    
     
     // MARK: - Properties
     
@@ -37,6 +40,7 @@ class AppScreenShotsCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.subviews.forEach { $0.removeFromSuperview() }
     }
     // MARK: - Private Methods
     
@@ -52,8 +56,8 @@ class AppScreenShotsCell: UITableViewCell {
             self.addSubview($0)
             $0.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(8)
-                $0.leading.trailing.equalToSuperview()
-                $0.height.greaterThanOrEqualTo(0)
+                $0.bottom.leading.trailing.equalToSuperview()
+                $0.height.equalTo(350)
             }
         }
         self.screenshotsStackView = UIStackView().then {
@@ -66,8 +70,6 @@ class AppScreenShotsCell: UITableViewCell {
                 $0.width.greaterThanOrEqualTo(0)
             }
         }
-        
-        
     }
     
     private func setProperties() {
@@ -78,6 +80,7 @@ class AppScreenShotsCell: UITableViewCell {
     // MARK: - Public Methods
     
     public func drawCell(_ model: AppModel) {
+        self.screenshotsStackView.subviews.forEach { $0.removeFromSuperview() }
         model.screenshotUrls.forEach { url in
             screenShopImageView = UIImageView().then { imageView in
                 imageView.layer.cornerRadius = 20
@@ -91,7 +94,8 @@ class AppScreenShotsCell: UITableViewCell {
                         let ratio = response.image.size.height / response.image.size.width
                         imageView.snp.makeConstraints {
                             $0.width.equalTo(self.snp.width).multipliedBy(0.6)
-                            $0.height.equalTo(imageView.snp.width).multipliedBy(ratio)
+                            
+//                            $0.height.equalTo(imageView.snp.width).multipliedBy(ratio)
                         }
                     case let .failure(error):
                         Log.i(error)
@@ -108,8 +112,9 @@ class AppScreenShotsCell: UITableViewCell {
 extension AppScreenShotsCell: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.x < screenshotScrollView.contentSize.width - screenshotScrollView.frame.size.width + SCROLLVIEW_INSET {
+            let pageWidth = ((self.frame.size.width * 0.6) + SCROLLVIEW_SPACE)
             targetContentOffset.pointee = CGPoint(
-                x: round(targetContentOffset.pointee.x / 208) * 208 - SCROLLVIEW_INSET,
+                x: round(targetContentOffset.pointee.x / pageWidth) * pageWidth - SCROLLVIEW_INSET,
                 y: targetContentOffset.pointee.y
             )
         }

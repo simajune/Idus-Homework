@@ -8,7 +8,12 @@
 
 import UIKit
 
-class AppWebShareCell: UITableViewCell {
+protocol AppWebShareCellDelegate {
+    func webBtnClicked(url: String?)
+    func shareBtnClicked(url: String?)
+}
+
+class AppWebShareCell: UITableViewCell, DetailAppCellProtocol {
     
     // MARK: - UI Components
     
@@ -20,6 +25,8 @@ class AppWebShareCell: UITableViewCell {
     
     // MARK: - Properties
     
+    var delegate: AppWebShareCellDelegate?
+    var trackViewUrlStr: String?
     
     // MARK: - Initialize
     
@@ -96,11 +103,11 @@ class AppWebShareCell: UITableViewCell {
     }
     
     @objc func webBtnAction() {
-//        delegate?.webBtnClicked(url: self.trackViewUrlStr)
+        delegate?.webBtnClicked(url: self.trackViewUrlStr)
     }
     
     @objc func shareBtnAction() {
-//        delegate?.shareBtnClicked(url: self.trackViewUrlStr)
+        delegate?.shareBtnClicked(url: self.trackViewUrlStr)
     }
     
     // MARK: - Public Methods

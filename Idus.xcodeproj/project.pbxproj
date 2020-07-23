@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2353C7CA24C9E73500B03900 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353C7C924C9E73500B03900 /* CellType.swift */; };
 		23913DE924C29D4F00F89E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23913DE824C29D4F00F89E9B /* AppDelegate.swift */; };
 		23913DED24C29D4F00F89E9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23913DEC24C29D4F00F89E9B /* HomeViewController.swift */; };
 		23913DF024C29D4F00F89E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23913DEE24C29D4F00F89E9B /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2353C7C924C9E73500B03900 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		23913DE524C29D4F00F89E9B /* Idus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23913DE824C29D4F00F89E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23913DEC24C29D4F00F89E9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3814A54124C561F7008269CB /* GlobalDefine.swift */,
 				3814A54324C5622C008269CB /* GlobalFunction.swift */,
 				38E6F3AA24C92A8600B740B4 /* PaddingLabel.swift */,
+				2353C7C924C9E73500B03900 /* CellType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				23913DED24C29D4F00F89E9B /* HomeViewController.swift in Sources */,
 				38E6F3B324C97A8500B740B4 /* AppScreenShotsCell.swift in Sources */,
 				38E6F3B924C97AE000B740B4 /* AppDescriptionCell.swift in Sources */,
+				2353C7CA24C9E73500B03900 /* CellType.swift in Sources */,
 				23913E0324C2DDD900F89E9B /* HomeViewModel.swift in Sources */,
 				3814A53F24C561AF008269CB /* IdusNavigationController.swift in Sources */,
 				38E6F3AB24C92A8600B740B4 /* PaddingLabel.swift in Sources */,

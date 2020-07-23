@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppCategoryCell: UITableViewCell {
+class AppCategoryCell: UITableViewCell, DetailAppCellProtocol {
     
     // MARK: - UI Components
     private var titleLabel: UILabel!

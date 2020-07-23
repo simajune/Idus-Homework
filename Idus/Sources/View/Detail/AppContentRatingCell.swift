@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppContentRatingCell: UITableViewCell {
+class AppContentRatingCell: UITableViewCell, DetailAppCellProtocol{
     
     // MARK: - UI Components
     
@@ -35,6 +35,7 @@ class AppContentRatingCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.subviews.forEach { $0.removeFromSuperview() }
     }
     // MARK: - Private Methods
     

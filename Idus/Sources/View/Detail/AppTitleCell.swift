@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppTitleCell: UITableViewCell {
+class AppTitleCell: UITableViewCell, DetailAppCellProtocol {
     
     // MARK: - UI Components
     

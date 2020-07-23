@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppFeatureCell: UITableViewCell {
+class AppFeatureCell: UITableViewCell, DetailAppCellProtocol {
     
     // MARK: - UI Components
     
@@ -38,6 +38,7 @@ class AppFeatureCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.subviews.forEach { $0.removeFromSuperview() }
     }
     // MARK: - Private Methods
     

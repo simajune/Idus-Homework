@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppDescriptionCell: UITableViewCell {
+class AppDescriptionCell: UITableViewCell, DetailAppCellProtocol {
     
     // MARK: - UI Components
     
@@ -32,24 +32,14 @@ class AppDescriptionCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+         self.subviews.forEach { $0.removeFromSuperview() }
     }
     // MARK: - Private Methods
     
     private func setupView() {
-        
-    }
-    
-    private func setProperties() {
-        self.backgroundColor = .lightGray
-        self.selectionStyle = .none
-    }
-    
-    // MARK: - Public Methods
-    
-    public func drawCell(_ model: AppModel) {
-        // 설명
         self.descriptionLabel = UILabel().then {
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+            $0.backgroundColor = .white
             $0.textColor = .black
             $0.numberOfLines = 0
             $0.textAlignment = .center
@@ -61,5 +51,16 @@ class AppDescriptionCell: UITableViewCell {
                 $0.bottom.equalToSuperview().offset(-40)
             }
         }
+    }
+    
+    private func setProperties() {
+        self.backgroundColor = .lightGray
+        self.selectionStyle = .none
+    }
+    
+    // MARK: - Public Methods
+    
+    public func drawCell(_ model: AppModel) {
+        self.descriptionLabel.text = model.description
     }
 }
