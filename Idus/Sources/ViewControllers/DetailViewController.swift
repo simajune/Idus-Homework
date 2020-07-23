@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setProperties()
+        setNotification()
         Log.i("viewDidLoad")
     }
     
@@ -61,6 +62,14 @@ class DetailViewController: UIViewController {
     
     private func setProperties() {
         self.view.backgroundColor = .white
+    }
+    
+    private func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name("reloadTableView"), object: nil)
+    }
+    
+    @objc func reloadData() {
+        self.tableView.reloadData()
     }
 }
 

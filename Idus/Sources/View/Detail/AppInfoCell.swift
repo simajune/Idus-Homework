@@ -398,6 +398,7 @@ final class AppInfoCell: UITableViewCell {
                 $0.height.equalTo(100)
             }
         }
+        NotificationCenter.default.post(name: NSNotification.Name("reloadTableView"), object: nil, userInfo: nil)
     }
     
     @objc func webBtnAction() {
