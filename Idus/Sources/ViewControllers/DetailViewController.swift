@@ -25,13 +25,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setProperties()
-        Log.i("viewDidLoad")
     }
     
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        Log.i("init")
     }
     
     required init?(coder: NSCoder) {

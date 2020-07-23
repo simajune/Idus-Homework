@@ -333,7 +333,7 @@ final class AppInfoCell: UITableViewCell {
         }
         self.releaseNotesLabel = UILabel().then {
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.isHidden = true
+            $0.isHidden = false
             $0.clipsToBounds = true
             $0.textColor = .black
             $0.numberOfLines = 0
@@ -401,7 +401,7 @@ final class AppInfoCell: UITableViewCell {
             self.expandedReleaseNotesButton.isSelected = true
             self.releaseNotesLabel.isHidden = false
         }
-        delegate?.expandBtnClicked()
+//        delegate?.expandBtnClicked()
     }
     
     @objc func webBtnAction() {

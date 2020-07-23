@@ -87,7 +87,7 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DetailViewController(viewModel: DetailViewModel(model: viewModel.appModels[indexPath.row]))
+        let detailVC = DetailAppViewController(viewModel: DetailViewModel(model: viewModel.appModels[indexPath.row]))
         GlobalFunction.pushVC(detailVC)
     }
 }
