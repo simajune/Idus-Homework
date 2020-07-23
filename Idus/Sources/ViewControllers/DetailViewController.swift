@@ -48,7 +48,15 @@ class DetailViewController: UIViewController {
             $0.separatorStyle = .none
             $0.backgroundColor = .clear
             $0.estimatedRowHeight = 100
-            $0.register(AppInfoCell.self, forCellReuseIdentifier: "AppInfoCell")
+            
+            $0.register(AppScreenShotsCell.self, forCellReuseIdentifier: "AppScreenShotsCell")
+            $0.register(AppTitleCell.self, forCellReuseIdentifier: "AppTitleCell")
+            $0.register(AppWebShareCell.self, forCellReuseIdentifier: "AppWebShareCell")
+            $0.register(AppSizeCell.self, forCellReuseIdentifier: "AppSizeCell")
+            $0.register(AppContentRatingCell.self, forCellReuseIdentifier: "AppContentRatingCell")
+            $0.register(AppFeatureCell.self, forCellReuseIdentifier: "AppFeatureCell")
+            $0.register(AppDescriptionCell.self.self, forCellReuseIdentifier: "AppDescriptionCell")
+            
             $0.register(AppCategoryCell.self, forCellReuseIdentifier: "AppCategoryCell")
             self.view.addSubview($0)
             $0.snp.makeConstraints {
@@ -68,6 +76,10 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension DetailViewController: UITableViewDataSource {
@@ -81,8 +93,7 @@ extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppInfoCell") as? AppInfoCell else { return UITableViewCell() }
-            cell.delegate = self
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppScreenShotsCell") as? AppScreenShotsCell else { return UITableViewCell() }
             cell.drawCell(viewModel.appModel)
             return cell
         } else {
@@ -90,25 +101,5 @@ extension DetailViewController: UITableViewDataSource {
             cell.drawCell(viewModel.appModel)
             return cell
         }
-    }
-}
-
-extension DetailViewController: AppInfoCellDelegate {
-    func webBtnClicked(url: String?) {
-        guard let urlStr = url, let url = URL(string: urlStr) else { return }
-        let controller = SFSafariViewController(url: url)
-        self.present(controller, animated: true, completion: nil)
-    }
-    
-    func shareBtnClicked(url: String?) {
-        guard let url = url else { return }
-        let items = [URL(string: url)!]
-        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(activityVC, animated: true)
-    }
-    
-    func expandBtnClicked() {
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.reloadRows(at: [indexPath], with: .none)
     }
 }

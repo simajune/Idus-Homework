@@ -22,11 +22,16 @@
 		3814A54224C561F7008269CB /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54124C561F7008269CB /* GlobalDefine.swift */; };
 		3814A54424C5622C008269CB /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54324C5622C008269CB /* GlobalFunction.swift */; };
 		3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814A54524C58C9D008269CB /* DetailViewController.swift */; };
-		38A87F7D24C6CBF60049D4B7 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */; };
 		38A87F7F24C6CC040049D4B7 /* AppCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */; };
-		38A87F8124C6E0400049D4B7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A87F8024C6E0400049D4B7 /* InfoView.swift */; };
 		38E6F3A924C9105300B740B4 /* DetailAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3A824C9105300B740B4 /* DetailAppViewController.swift */; };
 		38E6F3AB24C92A8600B740B4 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3AA24C92A8600B740B4 /* PaddingLabel.swift */; };
+		38E6F3B324C97A8500B740B4 /* AppScreenShotsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3B224C97A8500B740B4 /* AppScreenShotsCell.swift */; };
+		38E6F3B524C97A9C00B740B4 /* AppTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3B424C97A9C00B740B4 /* AppTitleCell.swift */; };
+		38E6F3B724C97ACB00B740B4 /* AppWebShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3B624C97ACB00B740B4 /* AppWebShareCell.swift */; };
+		38E6F3B924C97AE000B740B4 /* AppDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3B824C97AE000B740B4 /* AppDescriptionCell.swift */; };
+		38E6F3BB24C9854C00B740B4 /* AppSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3BA24C9854B00B740B4 /* AppSizeCell.swift */; };
+		38E6F3BD24C9855F00B740B4 /* AppContentRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3BC24C9855F00B740B4 /* AppContentRatingCell.swift */; };
+		38E6F3BF24C9857B00B740B4 /* AppFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6F3BE24C9857B00B740B4 /* AppFeatureCell.swift */; };
 		7D4A7A0B7AF3C552586781D2 /* Pods_Idus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,11 +53,16 @@
 		3814A54124C561F7008269CB /* GlobalDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDefine.swift; sourceTree = "<group>"; };
 		3814A54324C5622C008269CB /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
 		3814A54524C58C9D008269CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
 		38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryCell.swift; sourceTree = "<group>"; };
-		38A87F8024C6E0400049D4B7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		38E6F3A824C9105300B740B4 /* DetailAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppViewController.swift; sourceTree = "<group>"; };
 		38E6F3AA24C92A8600B740B4 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		38E6F3B224C97A8500B740B4 /* AppScreenShotsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenShotsCell.swift; sourceTree = "<group>"; };
+		38E6F3B424C97A9C00B740B4 /* AppTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleCell.swift; sourceTree = "<group>"; };
+		38E6F3B624C97ACB00B740B4 /* AppWebShareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebShareCell.swift; sourceTree = "<group>"; };
+		38E6F3B824C97AE000B740B4 /* AppDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionCell.swift; sourceTree = "<group>"; };
+		38E6F3BA24C9854B00B740B4 /* AppSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSizeCell.swift; sourceTree = "<group>"; };
+		38E6F3BC24C9855F00B740B4 /* AppContentRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentRatingCell.swift; sourceTree = "<group>"; };
+		38E6F3BE24C9857B00B740B4 /* AppFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureCell.swift; sourceTree = "<group>"; };
 		3F2DD255A3D6854F47989A29 /* Pods-Idus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.debug.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.debug.xcconfig"; sourceTree = "<group>"; };
 		43F3CAE0FF6AC6FE0ED40CC7 /* Pods-Idus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus.release.xcconfig"; path = "Target Support Files/Pods-Idus/Pods-Idus.release.xcconfig"; sourceTree = "<group>"; };
 		50B83CDA62EA92EE2D9DEE07 /* Pods_Idus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Idus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,9 +232,14 @@
 		38A87F7B24C6C9F30049D4B7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				38A87F7C24C6CBF60049D4B7 /* AppInfoCell.swift */,
+				38E6F3B224C97A8500B740B4 /* AppScreenShotsCell.swift */,
+				38E6F3B424C97A9C00B740B4 /* AppTitleCell.swift */,
+				38E6F3B624C97ACB00B740B4 /* AppWebShareCell.swift */,
+				38E6F3BA24C9854B00B740B4 /* AppSizeCell.swift */,
+				38E6F3BC24C9855F00B740B4 /* AppContentRatingCell.swift */,
+				38E6F3BE24C9857B00B740B4 /* AppFeatureCell.swift */,
+				38E6F3B824C97AE000B740B4 /* AppDescriptionCell.swift */,
 				38A87F7E24C6CC040049D4B7 /* AppCategoryCell.swift */,
-				38A87F8024C6E0400049D4B7 /* InfoView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -352,21 +367,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38A87F8124C6E0400049D4B7 /* InfoView.swift in Sources */,
+				38E6F3B724C97ACB00B740B4 /* AppWebShareCell.swift in Sources */,
 				3814A54624C58C9D008269CB /* DetailViewController.swift in Sources */,
+				38E6F3BD24C9855F00B740B4 /* AppContentRatingCell.swift in Sources */,
 				23913DED24C29D4F00F89E9B /* HomeViewController.swift in Sources */,
+				38E6F3B324C97A8500B740B4 /* AppScreenShotsCell.swift in Sources */,
+				38E6F3B924C97AE000B740B4 /* AppDescriptionCell.swift in Sources */,
 				23913E0324C2DDD900F89E9B /* HomeViewModel.swift in Sources */,
-				38A87F7D24C6CBF60049D4B7 /* AppInfoCell.swift in Sources */,
 				3814A53F24C561AF008269CB /* IdusNavigationController.swift in Sources */,
 				38E6F3AB24C92A8600B740B4 /* PaddingLabel.swift in Sources */,
 				3814A53A24C524B9008269CB /* Log.swift in Sources */,
+				38E6F3B524C97A9C00B740B4 /* AppTitleCell.swift in Sources */,
 				38A87F7F24C6CC040049D4B7 /* AppCategoryCell.swift in Sources */,
 				3814A53D24C54215008269CB /* AppCell.swift in Sources */,
+				38E6F3BF24C9857B00B740B4 /* AppFeatureCell.swift in Sources */,
 				23913E0624C2DED300F89E9B /* IdusService.swift in Sources */,
 				38E6F3A924C9105300B740B4 /* DetailAppViewController.swift in Sources */,
 				23913E0824C5EF7000F89E9B /* DetailViewModel.swift in Sources */,
 				3814A54224C561F7008269CB /* GlobalDefine.swift in Sources */,
 				3814A53724C52025008269CB /* AppModel.swift in Sources */,
+				38E6F3BB24C9854C00B740B4 /* AppSizeCell.swift in Sources */,
 				3814A54424C5622C008269CB /* GlobalFunction.swift in Sources */,
 				23913DE924C29D4F00F89E9B /* AppDelegate.swift in Sources */,
 			);

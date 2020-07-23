@@ -77,7 +77,6 @@ class DetailAppViewController: UIViewController {
     
     let SCROLLVIEW_INSET: CGFloat = 20.0
     let SCROLLVIEW_SPACE: CGFloat = 8.0
-    var delegate: AppInfoCellDelegate?
     var trackViewUrlStr: String?
     
     // MARK: - Overriden Methods
