@@ -464,9 +464,9 @@ class DetailAppViewController: UIViewController {
     
     private func drawView(model: AppModel) {
         self.trackViewUrlStr = model.trackViewUrl
-        
+        screenshotsStackView.subviews.forEach { $0.removeFromSuperview() }
         model.screenshotUrls.forEach { url in
-            screenShopImageView = UIImageView().then { imageView in
+            _ = UIImageView().then { imageView in
                 imageView.layer.cornerRadius = 20
                 imageView.layer.borderColor = UIColor.lightGray.cgColor
                 imageView.layer.borderWidth = 1
@@ -477,7 +477,7 @@ class DetailAppViewController: UIViewController {
                         Log.i(response.image.size)
                         let ratio = response.image.size.height / response.image.size.width
                         imageView.snp.makeConstraints {
-                            $0.width.equalTo(self.view.snp.width).multipliedBy(0.6)
+                            $0.width.equalTo(250)
                             $0.height.equalTo(imageView.snp.width).multipliedBy(ratio)
                         }
                     case let .failure(error):
@@ -547,7 +547,7 @@ class DetailAppViewController: UIViewController {
 extension DetailAppViewController: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.x < screenshotScrollView.contentSize.width - screenshotScrollView.frame.size.width + SCROLLVIEW_INSET {
-            let pageWidth = ((self.view.frame.size.width * 0.6) + SCROLLVIEW_SPACE)
+            let pageWidth = (250 + SCROLLVIEW_SPACE)
             targetContentOffset.pointee = CGPoint(
                 x: round(targetContentOffset.pointee.x / pageWidth) * pageWidth - SCROLLVIEW_INSET,
                 y: targetContentOffset.pointee.y
