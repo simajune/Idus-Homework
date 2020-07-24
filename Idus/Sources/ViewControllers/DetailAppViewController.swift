@@ -22,7 +22,6 @@ class DetailAppViewController: UIViewController {
     // 스크린 샷
     private var screenshotScrollView: UIScrollView!
     private var screenshotsStackView: UIStackView!
-    private var screenShopImageView: UIImageView!
     
     // 앱 이름, 개발, 가격
     private var appTitleLabel: UILabel!
@@ -464,7 +463,6 @@ class DetailAppViewController: UIViewController {
     
     private func drawView(model: AppModel) {
         self.trackViewUrlStr = model.trackViewUrl
-        screenshotsStackView.subviews.forEach { $0.removeFromSuperview() }
         model.screenshotUrls.forEach { url in
             _ = UIImageView().then { imageView in
                 imageView.layer.cornerRadius = 20
